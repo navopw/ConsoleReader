@@ -12,7 +12,7 @@ Since the ConsoleReader is just one class you can just copy paste it into your p
 String prompt = "console>";
 ConsoleReader consoleReader = new ConsoleReader(prompt);
 
-//the test command is an seperate class
+//the test command is an extra class
 consoleReader.registerCommand("test", new TestCommand());
 
 //inline style (java 8)
