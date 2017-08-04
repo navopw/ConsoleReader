@@ -20,7 +20,7 @@ consoleReader.registerCommand("clear", (String[] arguments) -> {
 	consoleReader.clearConsole();
 });
 
-//this blocks your thread an waits for user input
+//this blocks your thread and waits for user input
 consoleReader.listen();
 ```
 
