@@ -16,7 +16,7 @@ ConsoleReader consoleReader = new ConsoleReader(prompt);
 consoleReader.registerCommand("test", new TestCommand());
 
 //inline style (java 8)
-consoleReader.registerCommand("clear", (String[] arguments) -> {
+consoleReader.registerCommand("clear", (String... arguments) -> {
 	consoleReader.clearConsole();
 });
 
