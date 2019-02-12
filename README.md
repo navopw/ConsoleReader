@@ -9,13 +9,12 @@ Since the ConsoleReader is just one class you can just copy paste it into your p
 ## Usage
 
 ```java
-String prompt = "console>";
-ConsoleReader consoleReader = new ConsoleReader(prompt);
+ConsoleReader consoleReader = new ConsoleReader("console>");
 
 //the test command is an extra class
 consoleReader.registerCommand("test", new TestCommand());
 
-//inline style (java 8)
+//lambda style (later or java 8)
 consoleReader.registerCommand("clear", (String... arguments) -> {
 	consoleReader.clearConsole();
 });
