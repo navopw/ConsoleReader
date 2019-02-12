@@ -4,8 +4,8 @@
 
 ```
 <dependency>
+    <groupId>pw.navo</groupId>
     <artifactId>consolereader</artifactId>
-    <groupId>pw.navo.consolereader</groupId>
     <version>1.0.0</version>
     <scope>compile</scope>
 </dependency>
