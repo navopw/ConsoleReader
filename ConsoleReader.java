@@ -13,7 +13,7 @@ public class ConsoleReader {
 	private Map<String, ConsoleCommand> commands;
 
 	public ConsoleReader(String prompt) {
-		this.prompt = prompt + " ";
+		this.prompt = prompt;
 		this.commands = new HashMap<>();
 	}
 
@@ -24,7 +24,7 @@ public class ConsoleReader {
 			bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
 			while (true) {
-				System.out.print(this.prompt);
+				System.out.print(this.prompt + " ");
 				String nextLine = bufferedReader.readLine();
 
 				String[] split = nextLine.split(" ");
@@ -70,7 +70,7 @@ public class ConsoleReader {
 
 	public interface ConsoleCommand {
 
-		public void onCommand(String[] arguments);
+		public void onCommand(String... arguments);
 
 	}
 
