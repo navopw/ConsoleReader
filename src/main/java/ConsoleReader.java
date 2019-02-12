@@ -1,5 +1,3 @@
-package pw.navo.consolereader;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -13,18 +11,18 @@ public class ConsoleReader {
 	private Map<String, ConsoleCommand> commands;
 
 	public ConsoleReader(String prompt) {
-		this.prompt = prompt + " ";
+		this.prompt = prompt;
 		this.commands = new HashMap<>();
 	}
 
-	public void listen() {
+	public void listen() throws IOException {
 		BufferedReader bufferedReader = null;
 
 		try {
 			bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
 			while (true) {
-				System.out.print(this.prompt);
+				System.out.print(this.prompt + " ");
 				String nextLine = bufferedReader.readLine();
 
 				String[] split = nextLine.split(" ");
@@ -38,15 +36,9 @@ public class ConsoleReader {
 					this.printCommandNotFound();
 				}
 			}
-		} catch (IOException exception) {
-			exception.printStackTrace();
 		} finally {
 			if (bufferedReader != null) {
-				try {
-					bufferedReader.close();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
+				bufferedReader.close();
 			}
 		}
 	}
@@ -70,7 +62,7 @@ public class ConsoleReader {
 
 	public interface ConsoleCommand {
 
-		public void onCommand(String[] arguments);
+		public void onCommand(String... arguments);
 
 	}
 
