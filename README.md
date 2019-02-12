@@ -1,6 +1,6 @@
 # ConsoleReader
 
-Since the ConsoleReader is just one class you can just copy paste it into your project.
+An easy to use Java console reader with command system
 
 ## How it looks
 
@@ -16,11 +16,15 @@ consoleReader.registerCommand("test", new TestCommand());
 
 //lambda style (later or java 8)
 consoleReader.registerCommand("clear", (String... arguments) -> {
-	consoleReader.clearConsole();
+    consoleReader.clearConsole();
 });
 
 //this blocks your thread and waits for user input
-consoleReader.listen();
+try {
+    consoleReader.listen();
+} catch (IOException exception) {
+    exception.printStackTrace();
+}
 ```
 
 ## License
