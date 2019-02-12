@@ -6,7 +6,10 @@ An easy to use Java console reader with command system
 
 ```
 <dependency>
-    <artifactId></artifactId>
+    <artifactId>consolereader</artifactId>
+    <groupId>pw.navo.consolereader</groupId>
+    <version>1.0.0</version>
+    <scope>compile</scope>
 </dependency>
 ```
 
