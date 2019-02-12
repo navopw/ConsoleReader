@@ -1,7 +1,5 @@
 # ConsoleReader
 
-An easy to use Java console reader with command system
-
 ## Maven
 
 ```
