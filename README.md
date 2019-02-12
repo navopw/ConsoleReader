@@ -2,6 +2,14 @@
 
 An easy to use Java console reader with command system
 
+## Maven
+
+```
+<dependency>
+    <artifactId></artifactId>
+</dependency>
+```
+
 ## How it looks
 
 ![howitlooks](http://i.imgur.com/SnKOTDo.gif)
@@ -14,7 +22,7 @@ ConsoleReader consoleReader = new ConsoleReader("console>");
 //the test command is an extra class
 consoleReader.registerCommand("test", new TestCommand());
 
-//lambda style (later or java 8)
+//lambda style (java 8 or later)
 consoleReader.registerCommand("clear", (String... arguments) -> {
     consoleReader.clearConsole();
 });
