@@ -22,8 +22,7 @@ public class ConsoleReader {
 	}
 
 	/**
-	 *
-	 * @param prompt
+	 * @param prompt The prompt is the text that appears before every command you enter
 	 * @param threadSafe Decides whether a ConcurrentHashMap or a HashMap will be used
 	 */
 	public ConsoleReader(String prompt, boolean threadSafe) {
