@@ -6,15 +6,29 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class ConsoleReader {
 
 	private String prompt;
 	private Map<String, ConsoleCommand> commands;
 
+	/**
+	 * At default threadSafe is false
+	 * @param prompt
+	 */
 	public ConsoleReader(String prompt) {
+		this(prompt, false);
+	}
+
+	/**
+	 *
+	 * @param prompt
+	 * @param threadSafe Decides whether a ConcurrentHashMap or a HashMap will be used
+	 */
+	public ConsoleReader(String prompt, boolean threadSafe) {
 		this.prompt = prompt;
-		this.commands = new HashMap<>();
+		this.commands = (threadSafe ? new ConcurrentHashMap<>() : new HashMap<>());
 	}
 
 	public void listen() throws IOException {
