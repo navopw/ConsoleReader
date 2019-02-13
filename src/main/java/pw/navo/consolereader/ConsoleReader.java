@@ -18,11 +18,7 @@ public class ConsoleReader {
 	}
 
 	public void listen() throws IOException {
-		BufferedReader bufferedReader = null;
-
-		try {
-			bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-
+		try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in))) {
 			while (true) {
 				System.out.print(this.prompt + " ");
 				String nextLine = bufferedReader.readLine();
@@ -37,10 +33,6 @@ public class ConsoleReader {
 				} else {
 					this.printCommandNotFound();
 				}
-			}
-		} finally {
-			if (bufferedReader != null) {
-				bufferedReader.close();
 			}
 		}
 	}
