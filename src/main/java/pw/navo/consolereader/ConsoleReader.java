@@ -64,7 +64,7 @@ public class ConsoleReader {
 
 	public interface ConsoleCommand {
 
-		public void onCommand(String... arguments);
+		void onCommand(String... arguments);
 
 	}
 
